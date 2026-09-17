@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690" role="img" aria-label="Controller 상태 전이: LOCKED, WAIT_BT, ACTIVE, AUTH_FAILED">
+<rect width="1100" height="690" rx="16" fill="#f6f8fa"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#576579"/></marker></defs>
+<g font-family="Segoe UI,Malgun Gothic,sans-serif" fill="#1f2937" text-anchor="middle">
+<text x="40" y="42" text-anchor="start" font-size="24" font-weight="700">Controller FSM</text>
+<text x="40" y="69" text-anchor="start" font-size="15" fill="#576579">인증 상태와 Bluetooth 연결 상태에 따라 제어 명령 송신을 허용합니다.</text>
+<g fill="none" stroke="#576579" stroke-width="2.2" marker-end="url(#a)">
+<path d="M160 137V170"/>
+<path d="M280 220H430"/>
+<path d="M680 220H800"/>
+<path d="M925 170V110H555V170"/>
+<path d="M525 280V460"/>
+<path d="M925 280V505H680"/>
+<path d="M430 510H350V260H430"/>
+<path d="M680 555H1070V240H1050"/>
+</g>
+<circle cx="160" cy="127" r="10"/>
+<text x="200" y="132" font-size="14">부팅</text>
+<text x="353" y="184" font-size="15">등록 카드 인증</text>
+<text x="353" y="205" font-size="14" fill="#576579">릴레이 ON</text>
+<text x="740" y="184" font-size="14">연결 + 인증</text>
+<text x="740" y="205" font-size="14">알림 송신 성공</text>
+<text x="739" y="99" font-size="15">Bluetooth 연결 해제 / 제어 송신 차단</text>
+<text x="535" y="356" text-anchor="start" font-size="15">미등록 카드</text>
+<text x="535" y="379" text-anchor="start" font-size="14" fill="#576579">제어 송신 차단</text>
+<text x="814" y="460" font-size="15">미등록 카드</text>
+<text x="814" y="482" font-size="14" fill="#576579">제어 송신 차단 · 실패 알림</text>
+<text x="330" y="394" text-anchor="end" font-size="15">등록 카드 재인증</text>
+<text x="330" y="418" text-anchor="end" font-size="14" fill="#576579">Bluetooth 미연결</text>
+<text x="874" y="581" font-size="14">재인증 + Bluetooth 연결 유지</text>
+<text x="874" y="603" font-size="14">+ 인증 알림 송신 성공</text>
+<rect x="40" y="170" width="240" height="110" rx="12" fill="#e8edf3" stroke="#94a3b8"/>
+<text x="160" y="206" font-size="24" font-weight="700">LOCKED</text>
+<text x="160" y="235" font-size="16">등록 카드 대기</text>
+<text x="160" y="260" font-size="15" fill="#576579">릴레이 OFF · 송신 차단</text>
+<rect x="430" y="170" width="250" height="110" rx="12" fill="#fff3d6" stroke="#d3a331"/>
+<text x="555" y="206" font-size="24" font-weight="700">WAIT_BT</text>
+<text x="555" y="235" font-size="16">Bluetooth 연결 대기</text>
+<text x="555" y="260" font-size="15" fill="#576579">릴레이 ON · 송신 차단</text>
+<rect x="800" y="170" width="250" height="110" rx="12" fill="#daf3e5" stroke="#36a269"/>
+<text x="925" y="206" font-size="24" font-weight="700">ACTIVE</text>
+<text x="925" y="235" font-size="16">사용자 입력 처리</text>
+<text x="925" y="260" font-size="15" fill="#246947">제어 명령 송신 허용</text>
+<rect x="430" y="460" width="250" height="110" rx="12" fill="#ffe8e8" stroke="#d77a7a"/>
+<text x="555" y="496" font-size="23" font-weight="700">AUTH_FAILED</text>
+<text x="555" y="525" font-size="16">등록 카드 재인증 대기</text>
+<text x="555" y="550" font-size="15" fill="#9a4343">제어 명령 송신 차단</text>
+<text x="40" y="642" text-anchor="start" font-size="14" fill="#576579">LOCKED에서 미등록 카드는 잠금을 유지합니다. 실패 알림은 Bluetooth 연결 시에만 전송합니다.</text>
+<text x="40" y="666" text-anchor="start" font-size="14" fill="#576579">활성화에는 인증 알림 송신 성공과 실패 요청 없음이 필요합니다. 전송 실패 시 기존 상태를 유지합니다.</text>
+</g></svg>

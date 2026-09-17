@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-label="Controller는 Bluetooth로 Main Node에 연결되고, Main Node와 Node 1, Node 2는 CAN Bus를 공유한다">
+<rect width="1000" height="390" rx="16" fill="#f6f8fa"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z" fill="#64748b"/></marker></defs>
+<g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
+<rect x="45" y="45" width="280" height="122" rx="12" fill="#e6f3ff" stroke="#218bff" stroke-width="2"/>
+<text x="185" y="77" font-size="13" fill="#0969da" font-weight="700">MY CONTRIBUTION</text>
+<text x="185" y="107" font-size="23" fill="#1f2328" font-weight="700">Controller</text>
+<text x="185" y="137" font-size="16" fill="#57606a">RFID / Joystick / Switch</text>
+<path d="M337 106H638" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="486" y="82" font-size="18" fill="#0969da">Bluetooth (HC-05)</text>
+<text x="486" y="136" font-size="14" fill="#57606a">UART control packets</text>
+<rect x="655" y="45" width="300" height="122" rx="12" fill="#fff" stroke="#d0d7de" stroke-width="2"/>
+<text x="805" y="91" font-size="23" fill="#1f2328" font-weight="700">Main Node</text>
+<text x="805" y="126" font-size="16" fill="#57606a">4WD / Battery / Speed</text>
+<path d="M805 170V222M195 222H805M195 222V264M500 222V264" stroke="#27875a" stroke-width="4" fill="none"/>
+<text x="510" y="206" font-size="18" fill="#237a4d" font-weight="700">CAN BUS · Vehicle Network</text>
+<rect x="45" y="265" width="300" height="90" rx="12" fill="#fff" stroke="#d0d7de" stroke-width="2"/>
+<text x="195" y="300" font-size="22" fill="#1f2328" font-weight="700">Node 1 · Sensing</text>
+<text x="195" y="332" font-size="16" fill="#57606a">Temperature / Light / Distance</text>
+<rect x="365" y="265" width="300" height="90" rx="12" fill="#fff" stroke="#d0d7de" stroke-width="2"/>
+<text x="515" y="300" font-size="22" fill="#1f2328" font-weight="700">Node 2 · Display</text>
+<text x="515" y="332" font-size="16" fill="#57606a">TFT / CLCD / LEDs / Buzzer</text>
+<text x="816" y="303" font-size="16" fill="#57606a">4 nodes total</text>
+<text x="816" y="333" font-size="16" fill="#57606a">3 nodes on CAN</text>
+</g></svg>

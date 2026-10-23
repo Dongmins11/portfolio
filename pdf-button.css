@@ -1,0 +1,5 @@
+.site-header nav .pdf-save{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:7px 14px;border:1px solid #526b45;border-radius:3px;color:#fff;background:#293126;white-space:nowrap;font-size:13px}
+.site-header nav .pdf-save:hover{background:#46563f}.site-header nav .pdf-save:focus-visible{outline:3px solid #8ba77b;outline-offset:3px}
+@media(max-width:620px){.site-header{padding-inline:16px;gap:12px}.site-header nav{gap:14px;overflow-x:auto;min-width:0;flex-wrap:nowrap}.site-header nav a{white-space:nowrap}.site-header nav .pdf-save{padding:6px 10px;min-height:36px;font-size:12px}.site-header .wordmark{flex-shrink:0}}
+@media print{.pdf-save{display:none!important}}
+

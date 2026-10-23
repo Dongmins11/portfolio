@@ -2,7 +2,7 @@
 const exportButton = document.querySelector('#save-pdf');
 const exportStatus = document.querySelector('#export-status');
 const exportContent = document.querySelector('#export-content');
-const sources = ['index.html', 'poco.html', 'kickcan.html', 'plc.html'];
+const sources = ['index.html'];
 
 function prepareMain(documentSource, file, position) {
   const main = documentSource.querySelector('main');

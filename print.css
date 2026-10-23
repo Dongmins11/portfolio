@@ -24,40 +24,30 @@
 #export-content .journey-grid{display:block}#export-content .journey-intro{margin-bottom:6mm}
 #export-content .timeline{margin:0}#export-content .timeline li{padding-bottom:6mm}
 #export-content .timeline p,#export-content .timeline .date{color:#535c50}
-#export-content .export-case{margin-top:12mm}
-#export-content .case-top{padding:5mm 0 7mm}#export-content .case-top h1{font-size:32pt}
-#export-content .case-lead{font-size:11pt}
-#export-content .case-section{padding:7mm 0;scroll-margin:0}
-#export-content .case-cover figure{min-height:0;padding:5mm}#export-content .case-cover figure img{max-height:75mm}
-#export-content .case-data dl{grid-template-columns:1fr 1fr;gap:0 7mm}
-#export-content .section-title{margin-bottom:5mm}#export-content .section-title h2{font-size:20pt}
-#export-content .two-col{gap:7mm}#export-content .two-col h3{font-size:15pt}
-#export-content .feature{padding:7mm 0;margin-top:5mm}
-#export-content .feature-summary{grid-template-columns:1fr;gap:2mm}
-#export-content .feature-summary h3{font-size:18pt}
-#export-content p,#export-content li,#export-content td,#export-content dd{font-size:10.5pt;line-height:1.75}
-#export-content .media-pair img{height:auto;max-height:65mm;object-fit:contain}
-#export-content .demo-frame img{max-height:65mm}
-#export-content .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;padding:4mm}
-#export-content .flow h4{font-size:11pt}#export-content .flow p{font-size:9.5pt}
-#export-content .diagram{padding:5mm}#export-content .diagram svg{max-width:100%;height:auto}
-#export-content .trouble{padding:5mm;margin-top:5mm}
-#export-content .trouble header h3{font-size:17pt}
-#export-content .trouble-steps>div{grid-template-columns:7mm 23mm 1fr;gap:3mm;padding:4mm 0}
-#export-content .lesson{margin:4mm -5mm -5mm;padding:4mm 5mm}
-#export-content .wide-figure img{max-height:75mm;width:100%;object-fit:contain}
-#export-content details{margin-top:4mm}#export-content summary{font-size:11pt;font-weight:bold}
+#export-content p,#export-content li{font-size:10.5pt;line-height:1.75}
 #export-content a{overflow-wrap:anywhere}
+#export-content .project-image{padding:4mm}
+#export-content .section-heading{align-items:start;gap:5mm}
+#export-content .section-heading>p{max-width:65mm}
+#export-content .project-copy{padding:2mm 0}
+#export-content .project-copy .meta{font-size:9pt;flex-wrap:wrap}
+#export-content .project-copy .role p{font-size:10.5pt}
+#export-content .journey-intro p{color:#535c50}
+#export-content .hero-grid>*,#export-content .ongoing-grid>*,#export-content .project-row>*{min-width:0}
+#export-content .ongoing-label{flex-wrap:wrap;letter-spacing:.03em}
+#export-content .ongoing-stack{overflow-wrap:anywhere;font-size:9pt}
+#export-content .project-copy .tags{gap:1.5mm}
+#export-content .project-copy .tags li{font-size:8.5pt}
+#export-content .project-copy .meta span{overflow-wrap:anywhere}
 @page{size:A4 portrait;margin:13mm 15mm 14mm}
 @media print{
  html{scroll-padding:0}body.export-page{background:white;margin:0}
  .export-toolbar{display:none!important}#export-content{width:auto;max-width:none;padding:0;margin:0}
- *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;animation:none!important}
- #export-content .export-case,#export-content .ongoing-section,#export-content .projects,#export-content .journey-section{break-before:page}
- #export-content .case-section{break-before:page}
- #export-content h1,#export-content h2,#export-content h3,#export-content h4,#export-content summary{break-after:avoid}
- #export-content .project-row,#export-content .feature,#export-content .trouble,#export-content .metric,#export-content .timeline li,#export-content figure,#export-content .flow,#export-content .diagram,#export-content .before-after{break-inside:avoid}
- #export-content p{orphans:3;widows:3}#export-content .site-header,#export-content .footer,#export-content .case-nav{display:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;animation:none!important;transition:none!important}
+ #export-content .ongoing-section,#export-content .projects,#export-content .journey-section{break-before:page}
+ #export-content h1,#export-content h2,#export-content h3,#export-content h4{break-after:avoid}
+ #export-content .project-row,#export-content .timeline li,#export-content figure{break-inside:avoid}
+ #export-content p{orphans:3;widows:3}
  #export-content a{text-decoration:none;color:inherit}#export-content .text-link{font-size:10pt}
 }
 

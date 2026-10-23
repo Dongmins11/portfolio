@@ -3,6 +3,7 @@ const exportButton = document.querySelector('#save-pdf');
 const exportStatus = document.querySelector('#export-status');
 const exportContent = document.querySelector('#export-content');
 const sources = ['index.html'];
+let exportReady = false;
 
 function prepareMain(documentSource, file, position) {
   const main = documentSource.querySelector('main');
@@ -30,11 +31,31 @@ function prepareMain(documentSource, file, position) {
 
 async function waitForImages() {
   return Promise.all([...exportContent.querySelectorAll('img')].map(img => new Promise(resolve => {
-    if (img.complete) { resolve(img.naturalWidth > 0); return; }
-    const timer = setTimeout(() => resolve(false), 20000);
-    const finish = success => { clearTimeout(timer); resolve(success); };
-    img.addEventListener('load', () => finish(true), { once: true });
-    img.addEventListener('error', () => finish(false), { once: true });
+    if (img.complete && img.naturalWidth > 0) { resolve(true); return; }
+    let retries = 0;
+    let timer;
+    let finished = false;
+    const finish = success => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      img.removeEventListener('load', onLoad);
+      img.removeEventListener('error', retry);
+      resolve(success);
+    };
+    const onLoad = () => finish(img.naturalWidth > 0);
+    const retry = () => {
+      clearTimeout(timer);
+      if (retries >= 2) { finish(false); return; }
+      const url = new URL(img.src);
+      url.searchParams.set('pdf_retry', String(++retries));
+      img.src = url.href;
+      timer = setTimeout(retry, 30000);
+    };
+    img.addEventListener('load', onLoad);
+    img.addEventListener('error', retry);
+    timer = setTimeout(retry, 30000);
+    if (img.complete) retry();
   })));
 }
 
@@ -50,11 +71,13 @@ async function prepareExport() {
     await document.fonts.ready;
     exportContent.setAttribute('aria-busy', 'false');
     if (results.some(loaded => !loaded)) {
-      exportStatus.textContent = '일부 이미지가 준비되지 않았습니다. 새로고침한 뒤 다시 시도해 주세요.';
-      exportButton.textContent = '이미지 로딩 확인 필요';
+      exportStatus.textContent = '일부 이미지가 준비되지 않았습니다. 버튼을 눌러 다시 불러와 주세요.';
+      exportButton.textContent = '이미지 다시 불러오기';
+      exportButton.disabled = false;
       return;
     }
     exportButton.disabled = false;
+    exportReady = true;
     exportButton.textContent = 'PDF로 저장';
     exportStatus.textContent = '준비되었습니다. 버튼을 누르면 인쇄 창이 열립니다.';
   } catch (error) {
@@ -63,6 +86,9 @@ async function prepareExport() {
     console.error(error);
   }
 }
-exportButton.addEventListener('click', () => window.print());
+exportButton.addEventListener('click', () => {
+  if (exportReady) window.print();
+  else location.reload();
+});
 prepareExport();
 

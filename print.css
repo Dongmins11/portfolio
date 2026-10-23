@@ -1,0 +1,63 @@
+/* Only export-page is changed. Existing website layouts stay intact. */
+.export-toolbar{max-width:960px;margin:24px auto;padding:24px;background:white;border:1px solid #d4dad1;display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.export-toolbar h1{font-size:23px;margin:12px 0}.export-toolbar p{font-size:13px;margin:6px 0}.export-toolbar a{font-size:14px}
+.export-toolbar button{font:inherit;cursor:pointer;background:#293126;color:white;border:0;padding:12px 22px;min-height:44px}.export-toolbar button:disabled{opacity:.55;cursor:wait}
+#export-status{width:100%}.export-toolbar :focus-visible{outline:3px solid #526b45;outline-offset:4px}
+.export-page{background:#dfe2dc;min-width:0}
+#export-content{width:210mm;max-width:100%;margin:auto;background:#fff;padding:13mm 15mm;color:#202420}
+#export-content .wrap{width:100%;max-width:none;margin:0;padding-inline:0}
+#export-content .hero{padding-block:10mm}
+#export-content .hero-grid{grid-template-columns:40mm 1fr;gap:8mm;padding-bottom:7mm}
+#export-content .hero h1{font-size:30pt;margin-bottom:4mm}
+#export-content .hero h2{font-size:18pt;line-height:1.5}
+#export-content .hero p{font-size:11pt;line-height:1.75}
+#export-content .skill-grid{grid-template-columns:repeat(4,1fr);gap:4mm}
+#export-content .skill-grid h3{font-size:11pt}#export-content .skill-grid p{font-size:10pt}
+#export-content .ongoing-section{padding:8mm 0}
+#export-content .ongoing-grid{grid-template-columns:1fr 1fr;gap:7mm}
+#export-content .ongoing-grid h2{font-size:19pt}
+#export-content .ongoing-role{padding-left:5mm}#export-content .ongoing-role h3{font-size:16pt}
+#export-content .project-row{grid-template-columns:44% 1fr;gap:7mm;margin-top:6mm;padding-bottom:6mm}
+#export-content .project-image img{height:55mm;object-fit:contain}
+#export-content .project-copy h3{font-size:21pt}
+#export-content .journey-section{padding:9mm 0;background:#edf0e9;color:#202420}
+#export-content .journey-grid{display:block}#export-content .journey-intro{margin-bottom:6mm}
+#export-content .timeline{margin:0}#export-content .timeline li{padding-bottom:6mm}
+#export-content .timeline p,#export-content .timeline .date{color:#535c50}
+#export-content .export-case{margin-top:12mm}
+#export-content .case-top{padding:5mm 0 7mm}#export-content .case-top h1{font-size:32pt}
+#export-content .case-lead{font-size:11pt}
+#export-content .case-section{padding:7mm 0;scroll-margin:0}
+#export-content .case-cover figure{min-height:0;padding:5mm}#export-content .case-cover figure img{max-height:75mm}
+#export-content .case-data dl{grid-template-columns:1fr 1fr;gap:0 7mm}
+#export-content .section-title{margin-bottom:5mm}#export-content .section-title h2{font-size:20pt}
+#export-content .two-col{gap:7mm}#export-content .two-col h3{font-size:15pt}
+#export-content .feature{padding:7mm 0;margin-top:5mm}
+#export-content .feature-summary{grid-template-columns:1fr;gap:2mm}
+#export-content .feature-summary h3{font-size:18pt}
+#export-content p,#export-content li,#export-content td,#export-content dd{font-size:10.5pt;line-height:1.75}
+#export-content .media-pair img{height:auto;max-height:65mm;object-fit:contain}
+#export-content .demo-frame img{max-height:65mm}
+#export-content .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;padding:4mm}
+#export-content .flow h4{font-size:11pt}#export-content .flow p{font-size:9.5pt}
+#export-content .diagram{padding:5mm}#export-content .diagram svg{max-width:100%;height:auto}
+#export-content .trouble{padding:5mm;margin-top:5mm}
+#export-content .trouble header h3{font-size:17pt}
+#export-content .trouble-steps>div{grid-template-columns:7mm 23mm 1fr;gap:3mm;padding:4mm 0}
+#export-content .lesson{margin:4mm -5mm -5mm;padding:4mm 5mm}
+#export-content .wide-figure img{max-height:75mm;width:100%;object-fit:contain}
+#export-content details{margin-top:4mm}#export-content summary{font-size:11pt;font-weight:bold}
+#export-content a{overflow-wrap:anywhere}
+@page{size:A4 portrait;margin:13mm 15mm 14mm}
+@media print{
+ html{scroll-padding:0}body.export-page{background:white;margin:0}
+ .export-toolbar{display:none!important}#export-content{width:auto;max-width:none;padding:0;margin:0}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;animation:none!important}
+ #export-content .export-case,#export-content .ongoing-section,#export-content .projects,#export-content .journey-section{break-before:page}
+ #export-content .case-section{break-before:page}
+ #export-content h1,#export-content h2,#export-content h3,#export-content h4,#export-content summary{break-after:avoid}
+ #export-content .project-row,#export-content .feature,#export-content .trouble,#export-content .metric,#export-content .timeline li,#export-content figure,#export-content .flow,#export-content .diagram,#export-content .before-after{break-inside:avoid}
+ #export-content p{orphans:3;widows:3}#export-content .site-header,#export-content .footer,#export-content .case-nav{display:none}
+ #export-content a{text-decoration:none;color:inherit}#export-content .text-link{font-size:10pt}
+}
+

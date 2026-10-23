@@ -45,13 +45,12 @@
  .export-toolbar{display:none!important}#export-content{width:auto;max-width:none;padding:0;margin:0}
  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;animation:none!important;transition:none!important}
  #export-content .projects{break-before:page}
- #export-content .project-row:nth-of-type(3){break-before:page}
  #export-content h1,#export-content h2,#export-content h3,#export-content h4{break-after:avoid}
  #export-content .project-row,#export-content .timeline li,#export-content figure{break-inside:avoid}
  #export-content p{orphans:3;widows:3}
  #export-content a{text-decoration:none;color:inherit}#export-content .text-link{font-size:10pt}
 }
-/* A4: preserve the original sequence, use two complete project cards per sheet. */
+/* A4: preserve the original sequence, fit all three project cards on one sheet. */
 .export-toolbar button{background:#213e61}.export-page{background:#e1e7ee}
 #export-content{color:#17243a}
 #export-content .hero{padding-block:4mm 5mm}
@@ -79,20 +78,20 @@
 #export-content .section-heading .eyebrow{margin-bottom:2mm;font-size:9pt}
 #export-content .section-heading h2{font-size:25pt}
 #export-content .section-heading>p{font-size:9pt;max-width:80mm}
-#export-content .project-row{grid-template-columns:37% minmax(0,1fr);gap:6mm;align-items:start;margin-top:4mm;padding-bottom:5mm;break-inside:avoid}
+#export-content .project-row{grid-template-columns:37% minmax(0,1fr);gap:6mm;align-items:start;margin-top:3mm;padding-bottom:3mm;break-inside:avoid}
 #export-content .project-visual{display:flex;flex-direction:column;gap:2mm;break-inside:avoid}
-#export-content .project-image{height:58mm;min-height:0;padding:3mm;border-radius:4px;background:#f4f7fb}
-#export-content .project-image img{height:100%;width:100%;object-fit:contain;max-height:52mm}
+#export-content .project-image{height:43mm;min-height:0;padding:2mm;border-radius:4px;background:#f4f7fb}
+#export-content .project-image img{height:100%;width:100%;object-fit:contain;max-height:39mm}
 #export-content .system-map{margin:0;width:100%;height:auto;max-height:25mm}
 #export-content .project-copy{padding:0}
-#export-content .project-copy h3{font-size:19pt;line-height:1.2;margin:2mm 0}
+#export-content .project-copy h3{font-size:18pt;line-height:1.2;margin:1.5mm 0}
 #export-content .project-copy .project-name{font-size:11pt;margin-bottom:2mm}
 #export-content .project-copy>p:not(.project-name){font-size:9.7pt;line-height:1.55;margin-bottom:2mm}
-#export-content .project-copy .meta{font-size:8pt;line-height:1.4;gap:1mm}
-#export-content .project-copy .role{margin-top:3mm;padding-left:3mm;border-color:#527aa6}
-#export-content .project-copy .role p{font-size:9.5pt;line-height:1.55}
+#export-content .project-copy .meta{font-size:8pt;line-height:1.4;gap:1mm;flex-direction:row}
+#export-content .project-copy .role{margin-top:1.5mm;padding-left:3mm;border-color:#527aa6;display:grid;grid-template-columns:14mm minmax(0,1fr);gap:2mm;align-items:start}
+#export-content .project-copy .role p{font-size:9.5pt;line-height:1.55;margin:0}
 #export-content .project-copy .role>span{font-size:7.5pt}
-#export-content .project-copy .tags{margin:3mm 0;gap:1mm}
+#export-content .project-copy .tags{margin:1.5mm 0;gap:1mm}
 #export-content .project-copy .tags li{font-size:7.5pt;line-height:1.4;padding:1mm 1.5mm}
 #export-content .project-link{font-size:9pt;padding-top:2mm}
 #export-content .journey-section{padding:6mm 0;margin-top:5mm;background:#f0f5fb;color:#17243a;break-inside:avoid}

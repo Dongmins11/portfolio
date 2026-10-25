@@ -17,3 +17,5 @@ h1,h2,h3,h4{break-after:avoid}p,li{orphans:3;widows:3}
 .hero h1 em{background:none;color:#4841e8}.project-image img{object-fit:contain}.journey-grid{grid-template-columns:1fr}
 a{color:inherit;text-decoration:none}
 }
+
+@media print{.ongoing-section,.journey-section,.project-row,.journey-intro{break-inside:avoid}}

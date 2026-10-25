@@ -1,8 +1,8 @@
-/* Reuse the published pages; do not keep a second resume content source. */
+/* Preserve the verified three-page PDF layout while the main website design evolves. */
 const exportButton = document.querySelector('#save-pdf');
 const exportStatus = document.querySelector('#export-status');
 const exportContent = document.querySelector('#export-content');
-const sources = ['index.html'];
+const sources = ['pdf-source.html'];
 let exportReady = false;
 
 function prepareMain(documentSource, file, position) {
@@ -91,4 +91,3 @@ exportButton.addEventListener('click', () => {
   else location.reload();
 });
 prepareExport();
-

@@ -1,0 +1,19 @@
+/* Print the live main DOM; no fixed sheets, copied content, font resizing or forced page starts. */
+#print-main{font-family:inherit;cursor:pointer;line-height:inherit}#print-main:disabled{opacity:.65}
+@page{size:A4;margin:12mm}
+@media print{
+html{scroll-behavior:auto}body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.site-header,.skip,.footer,.hero-actions,.hero-summary>a{display:none!important}
+.wrap{width:100%;max-width:none;margin-inline:auto}main{width:100%}
+.hero,.skills-section,.projects,.ongoing-section,.journey-section{padding-block:20px;margin-block:0;break-before:auto;break-after:auto}
+.hero-layout{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:25px;padding-block:20px}.hero-copy,.profile-card,.project-body>*{min-width:0}.profile-card{transform:none;box-shadow:none;max-width:100%}
+.hero-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-summary>div{display:block}
+.capabilities{grid-template-columns:repeat(2,minmax(0,1fr))}.ongoing-grid,.project-body{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.section-heading,.project-overview,.process-diagram figcaption{break-inside:avoid;break-after:avoid}
+h1,h2,h3,h4{break-after:avoid}p,li{orphans:3;widows:3}
+.experience-list article,.process-diagram,.project-body,.timeline li,.profile-card{break-inside:avoid}
+.project-row{break-inside:auto}.process-diagram ol,.featured-flow ol,.project-row>.process-diagram ol{grid-template-columns:repeat(3,minmax(0,1fr))}
+.process-diagram li:after,.process-diagram li:before{display:none!important}
+.hero h1 em{background:none;color:#4841e8}.project-image img{object-fit:contain}.journey-grid{grid-template-columns:1fr}
+a{color:inherit;text-decoration:none}
+}

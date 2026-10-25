@@ -1,8 +1,8 @@
-/* Preserve the verified three-page PDF layout while the main website design evolves. */
+/* Render the current main page only, using responsive print styles. */
 const exportButton = document.querySelector('#save-pdf');
 const exportStatus = document.querySelector('#export-status');
 const exportContent = document.querySelector('#export-content');
-const sources = ['pdf-source.html'];
+const sources = ['index.html'];
 let exportReady = false;
 
 function prepareMain(documentSource, file, position) {

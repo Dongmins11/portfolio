@@ -72,14 +72,15 @@ async function openPrintPreview() {
   document.body.prepend(bar);
   bar.querySelector('#print-preview-close').addEventListener('click',closePrintPreview);
   bar.querySelector('#print-preview-save').addEventListener('click',async()=>{await preparePrintAssets();window.print();});
-  place([intro,skills],'소개 · 프로젝트 기반 적용 경험');
+  place([intro,journey],'프로필 · Experience');
+  place([skills],'프로젝트 기반 적용 경험');
   featured.forEach((node,i)=>place([node],`메인 프로젝트 ${i+1}`));
   for(let i=0;i<rows.length;i+=2){
    const final=i+2>=rows.length;
-   const group=[...(i===0?[heading]:[]),...rows.slice(i,i+2),...(final?[journey]:[])];
-   place(group,final?'프로젝트 · 개발 경험':'완료 프로젝트');
+   const group=[...(i===0?[heading]:[]),...rows.slice(i,i+2)];
+   place(group,'완료 프로젝트');
   }
-  if(!rows.length&&journey)place([journey],'개발 경험');
+
   // Empty source containers stay in the DOM so restoration preserves all handlers.
   if(projects){projects.dataset.printHidden='true';projects.style.display='none';}
   let n=0;main.querySelectorAll(':scope > .pdf-sheet').forEach(sheet=>{sheet.querySelector('.pdf-sheet-label').textContent=++n+' / '+main.querySelectorAll(':scope > .pdf-sheet').length;});

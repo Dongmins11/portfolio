@@ -72,8 +72,7 @@ async function openPrintPreview() {
   document.body.prepend(bar);
   bar.querySelector('#print-preview-close').addEventListener('click',closePrintPreview);
   bar.querySelector('#print-preview-save').addEventListener('click',async()=>{await preparePrintAssets();window.print();});
-  place([intro,journey],'프로필 · Experience');
-  place([skills],'프로젝트 기반 적용 경험');
+  place([intro,journey,skills],'프로필 · Experience · 프로젝트 기반 적용 경험');
   featured.forEach((node,i)=>place([node],`메인 프로젝트 ${i+1}`));
   for(let i=0;i<rows.length;i+=2){
    const final=i+2>=rows.length;

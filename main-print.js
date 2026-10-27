@@ -13,7 +13,7 @@ async function preparePrintAssets() {
  if (images.some(img => !img.naturalWidth)) throw new Error('일부 이미지를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.');
 }
 function createSheet(label) {
- const sheet = document.createElement('div'); sheet.className = 'pdf-sheet'; sheet.setAttribute('aria-label', label);
+ const sheet = document.createElement('div'); sheet.className = 'pdf-sheet'; if(/^프로젝트 \d/.test(label)){sheet.classList.add('project-sheet');if(label==='프로젝트 1')sheet.classList.add('has-project-heading');} sheet.setAttribute('aria-label', label);
  const number = document.createElement('span'); number.className = 'pdf-sheet-label'; number.textContent = label; sheet.append(number);
  main.append(sheet); return sheet;
 }
@@ -75,11 +75,11 @@ async function openPrintPreview() {
   bar.querySelector('#print-preview-save').addEventListener('click',async()=>{await preparePrintAssets();window.print();});
   place([intro,journey,skills],'프로필 · Experience · 프로젝트 기반 적용 경험');
   featured.forEach((node,i)=>place([node],`메인 프로젝트 ${i+1}`));
-  for(let i=0;i<rows.length;i+=2){
-   const final=i+2>=rows.length;
-   const group=[...(i===0?[heading]:[]),...rows.slice(i,i+2)];
-   place(group,'완료 프로젝트');
-  }
+  rows.forEach((row,i)=>{
+   const sheet=createSheet('프로젝트 '+(i+1));
+   if(i===0&&heading)moveToSheet(heading,sheet);
+   moveToSheet(row,sheet);
+  });
 
   // Empty source containers stay in the DOM so restoration preserves all handlers.
   if(projects){projects.dataset.printHidden='true';projects.style.display='none';}

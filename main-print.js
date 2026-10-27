@@ -8,6 +8,7 @@ async function preparePrintAssets() {
  const images = [...main.querySelectorAll('img')];
  images.forEach(img => { img.loading = 'eager'; });
  await Promise.all(images.map(img => img.decode().catch(() => {})));
+ await document.fonts.load('400 16px Pretendard');
  await document.fonts.ready;
  if (images.some(img => !img.naturalWidth)) throw new Error('일부 이미지를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.');
 }
@@ -19,7 +20,7 @@ function createSheet(label) {
 function moveToSheet(node, sheet) {
  const marker = document.createComment('print-origin'); node.before(marker); originalNodes.push([node,marker]); sheet.append(node);
 }
-function fits(sheet) { return sheet.getBoundingClientRect().height <= 1124; }
+function fits(sheet) { return sheet.getBoundingClientRect().height <= 1122.8; }
 function place(nodes,label) {
  let sheet=createSheet(label);
  nodes.filter(Boolean).forEach(node => {

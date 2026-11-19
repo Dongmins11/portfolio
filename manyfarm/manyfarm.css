@@ -1,0 +1,9 @@
+/* Additions to existing detail-page components. No global visual overrides. */
+.media-slot{min-height:250px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;background:#f5f5f3;border:1px dashed #bfc5bc;color:#535b50}
+.media-slot .slot-num{font-size:11px;letter-spacing:.06em;color:#7b8476;margin-bottom:16px}.media-slot strong{font-size:21px;line-height:1.5}.media-slot p{font-size:14px;max-width:600px;margin:10px 0 0;color:#687064}.media-slot svg{display:none}.media-slot .format{font-size:11px;color:#7b8476;margin-top:14px}
+.case-cover .cover-placeholder{display:block;min-height:0}.case-cover .media-slot{min-height:300px}.demo-frame .media-slot{aspect-ratio:1000/430;min-height:280px}.media-pair .media-slot{min-height:220px}
+.robot-system .nodes{grid-template-columns:repeat(4,minmax(0,1fr))}.robot-system .node{padding:18px}.robot-system .bus:first-child{margin-top:0;border-top:0}
+.window-figure svg{display:block;width:100%;height:auto}.window-figure{overflow:auto}.site-header .pdf-save{font-family:inherit;cursor:pointer}.feature-summary>*{min-width:0}
+@media(max-width:900px){.robot-system .nodes{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.robot-system .nodes{grid-template-columns:1fr}.case-cover .media-slot{min-height:220px}.media-slot{padding:22px 16px;min-height:200px}.media-slot strong{font-size:18px}.media-slot p{font-size:13px}.demo-frame .media-slot{min-height:230px;aspect-ratio:auto}.media-pair .media-slot{min-height:200px}.window-figure svg{min-width:520px}.site-header .pdf-save{flex-shrink:0}}
+@media print{.site-header,.case-nav,.actions,.demo-controls,.next-project{display:none}.wrap{width:100%}.media-slot{min-height:120px!important}.trouble{break-inside:avoid}}
